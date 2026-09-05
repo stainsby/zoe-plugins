@@ -1,20 +1,17 @@
 # Registering a plugin in this marketplace
 
-Open a pull request with your entry added to `.claude-plugin/marketplace.json`.
+Plugins are added by creating a pull request (PR) with the changes below.
 
-About your entry:
+## 1. Copy in the plugin files
 
-- Point to the zipped plugin
-  - typically via a release tag
-  - `latest-release` is the default tag
+The plugin's files should be copied into `plugins/<surface>/<plugin-name>/`.
+The plugin's `.claude-plugin/plugin.json` goes directly under there along
+with the rest of your plugin's files (skills, etc.).
 
-    ```
-    https://raw.githubusercontent.com/you/your-plugin/latest-release/dist/plugin.zip
-    ```
+## 2. Add a marketplace entry
 
-  - the URL must point to a real resource, or the PR will be rejected.
-
-What you add to `plugins` in `.claude-plugin/marketplace.json`:
+Add an entry for your plugin under `plugins` in
+`.claude-plugin/marketplace.json`:
 
 ```json
 {
@@ -23,11 +20,33 @@ What you add to `plugins` in `.claude-plugin/marketplace.json`:
     {
       "name": "your-plugin",
       "description": "One sentence saying what it does.",
-      "source": {
-        "source": "archive",
-        "url": "https://raw.githubusercontent.com/you/your-plugin/latest-release/dist/plugin.zip"
-      }
+      "version": "1.0.0",
+      "author": {
+        "name": "Your Name",
+        "email": "you@example.com"
+      },
+      "source": "./plugins/claude/your-plugin",
+      "category": "productivity"
     }
   ]
 }
 ```
+
+Use exactly the same fields as above, with appropriate values for the
+plugin.
+
+Note:
+
+- `source` is a path in this repository and must start with `./`.
+- `version`, `description` and `author` **must** match your plugin's own `plugin.json`.
+- `category` belongs here, not in `plugin.json`, where it is ignored.
+
+## 3. Validate the marketplace entry
+
+Check the entry by running `scripts/validate.py`. It checks the catalogue and every
+plugin it lists, and exits non-zero if anything is wrong.
+
+## 4. Create the PR
+
+Open a pull request targetting `main` with the above changes in it and paste
+the output of `scripts/validate.py` into the description.
