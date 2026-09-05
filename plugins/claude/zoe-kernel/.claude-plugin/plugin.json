@@ -1,0 +1,19 @@
+{
+  "name": "zoe-kernel",
+  "description": "ZOE — Zero Organisation Enterprises. The kernel an AI uses to run an enterprise from a charter: a cycle of orient, redesign, reskill, run and assess, with the decisions a human must make held at gates.",
+  "version": "1.2.1",
+  "author": {
+    "name": "Sam Stainsby"
+  },
+  "homepage": "https://github.com/stainsby/zoe-kernel",
+  "repository": "https://github.com/stainsby/zoe-kernel",
+  "license": "MIT",
+  "keywords": [
+    "zoe",
+    "enterprise",
+    "charter",
+    "agent",
+    "kernel"
+  ],
+  "defaultEnabled": false
+}

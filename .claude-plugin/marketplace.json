@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "zoe",
+  "version": "1.0.0",
+  "description": "Plugins for Zero Organisation Enterprises (ZOEs).",
+  "owner": {
+    "name": "Sam Stainsby",
+    "email": "sam@stainsby.au"
+  },
+  "plugins": [
+    {
+      "name": "zoe-kernel",
+      "description": "ZOE — Zero Organisation Enterprises. The basis of an enterprise managed by AI agents and directed by humans.",
+      "version": "1.2.1",
+      "author": {
+        "name": "Sam Stainsby",
+        "email": "sam@stainsby.au"
+      },
+      "source": "./plugins/claude/zoe-kernel",
+      "category": "productivity"
+    }
+  ]
+}
