@@ -2,16 +2,24 @@
 
 Plugins are added by creating a pull request (PR) with the changes below.
 
-## 1. Copy in the plugin files
+## 1. Add your plugin
 
-The plugin's files should be copied into `plugins/<surface>/<plugin-name>/`.
-The plugin's `.claude-plugin/plugin.json` goes directly under there along
-with the rest of your plugin's files (skills, etc.).
+You need to have created a zipped archive of your plugin already.
 
-## 2. Add a marketplace entry
+From the root of this repository:
 
-Add an entry for your plugin under `plugins` in
-`.claude-plugin/marketplace.json`:
+```sh
+scripts/update-plugin.py path/to/your-plugin.zip
+```
+
+This copies the plugin into `plugins/<surface>/<plugin-name>/` and adds
+its entry to `.claude-plugin/marketplace.json`, copying `name`, `version`,
+`description` and `author` from your plugin config. You shouldn't edit those
+fields in the marketplace entry.
+
+## 2. Add the catalogue fields
+
+Add a `category` to aid finding your plugin in listings.
 
 ```json
 {
@@ -32,21 +40,15 @@ Add an entry for your plugin under `plugins` in
 }
 ```
 
-Use exactly the same fields as above, with appropriate values for the
-plugin.
+## 3. Validate
 
-Note:
+Validate the whole marketplace with:
 
-- `source` is a path in this repository and must start with `./`.
-- `version`, `description` and `author` **must** match your plugin's own `plugin.json`.
-- `category` belongs here, not in `plugin.json`, where it is ignored.
+```sh
+scripts/validate.py
+```
 
-## 3. Validate the marketplace entry
+## 4. Create a PR
 
-Check the entry by running `scripts/validate.py`. It checks the catalogue and every
-plugin it lists, and exits non-zero if anything is wrong.
-
-## 4. Create the PR
-
-Open a pull request targetting `main` with the above changes in it and paste
+Open a pull request targeting `main` with the above changes in it and paste
 the output of `scripts/validate.py` into the description.

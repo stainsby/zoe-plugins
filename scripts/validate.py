@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
-"""Validate this marketplace: the catalogue, and every plugin it lists.
+"""Check this marketplace: the catalogue file, and every plugin it lists.
 
-Run from the repository root, or from anywhere:
-
+Usage:
     scripts/validate.py
 
-Exits 0 if every check passes, 1 otherwise. Each check prints what it compared and
-how many things it looked at, so a check that has stopped looking at anything shows
-up as a count of zero rather than as silence.
+Checks that the catalogue parses, has the required fields, and lists no duplicate
+plugin names. Then for each entry: the source path stays inside the repository, the
+plugin directory exists, its .claude-plugin/plugin.json is present and parses, and the
+entry's name, version, description and author match it. Finally runs
+`claude plugin validate --strict` if the claude CLI is installed, and says so if it is
+not, rather than passing quietly.
+
+Prints one PASS or FAIL line per check, with what it compared.
+
+Exit status: 0 if every check passes, 1 otherwise.
 """
 import json
 import re
@@ -103,15 +109,14 @@ def main():
         check(f"[{name}] entry name matches plugin.json", pj.get("name") == name,
               f"entry {name!r} vs manifest {pj.get('name')!r}")
 
-        # The one that fails silently in production: the entry's version wins over
-        # the manifest's without warning, so a stale entry pins everyone to a cache.
+        # A version in the entry overrides the manifest's, with no error, so a stale
+        # one leaves adopters on a cached copy.
         if "version" in e:
             check(f"[{name}] entry version matches plugin.json",
                   e["version"] == pj.get("version"),
                   f"entry {e['version']!r} vs manifest {pj.get('version')!r}")
 
-        # Duplicated in both files, so they can disagree. The catalogue's copy is what
-        # someone reads while browsing; the manifest's is what they see once installed.
+        # Shown while browsing the catalogue; the manifest's copy is shown after install.
         if "description" in e:
             check(f"[{name}] entry description matches plugin.json",
                   e["description"] == pj.get("description"),
@@ -124,8 +129,8 @@ def main():
                   "identical" if e["author"] == pj.get("author")
                   else f"entry {e['author']} vs manifest {pj.get('author')}")
 
-        # These four are the catalogue's own, and the vendor's validator warns when they
-        # appear in a plugin manifest: "belongs in the marketplace entry, not plugin.json".
+        # `claude plugin validate` warns if these appear in a plugin manifest:
+        # "belongs in the marketplace entry (marketplace.json), not plugin.json".
         misplaced = [f for f in ("category", "tags", "source", "strict") if f in pj]
         check(f"[{name}] plugin.json carries no catalogue-only fields", not misplaced,
               "none" if not misplaced else f"{misplaced} belong in the entry and are ignored here")
