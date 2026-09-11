@@ -16,7 +16,7 @@ new kernel version is not this skill — see `zoe-reconcile`.) You may also arri
 from `zoe-orient`'s wiring check — a missing index, a skill or agent the host no
 longer shows; fix what it found with the director before handing back.
 
-Read: the charter and index templates under this skill in `assets`.
+Read: the charter, index and enterprise instructions templates under this skill in `assets`.
 
 Open the conversation yourself; do not wait to be asked. Greet the director,
 say you are set up to pursue a goal but do not have one yet, and invite them
@@ -61,6 +61,8 @@ Do, with a director, through negotiation:
   - If the host cannot run separate agents at all, a ZOE can still run, but the separation
     then rests on the manager's own discipline. Record that in the index as a known
     weakness so a director knows the trade they are making.
+- Ask whether this host can run the enterprise on a schedule with nobody present, and how it
+  is started; record the answer, or a plain "no", in the index under `running unattended`.
 - Create a new skill that **is** the index.
   - It is a skill, not a plain file, so that every host is guaranteed to show it to
     the agent; do not "simplify" it into a loose document.
@@ -68,12 +70,19 @@ Do, with a director, through negotiation:
   - Check the new skill is visible to you AS A SKILL — the director may need to give more setup help if it's not.
   - Immediately add the charter location and the kernel version (see `VERSION` beside the
     kernel's instructions and skills).
+- Create the enterprise instructions from the template in `assets`. Ask the director for any
+  standing directions to start it with, in their own words. Record where the file is in the
+  index, and make sure this host loads it every session, the same way it loads the kernel's
+  instructions. Remember: instructions are not specific to a particular skill.
 - Charter: ask for their vision, scope (in and out), what success looks like, and the hard
   rules — what the agent must never do, and what must get director approval first. Write the
   charter from their answers. They own and approve it; you do not invent the goal, and the
   hard rules are theirs to set, not yours. Where more than one director will direct the
   enterprise, ask if it is OK if any one of them can approve anything, and if their actions
-  need to be audited. If not, then discuss the alternatives.
+  need to be audited. If not, then discuss the alternatives. Ask as well who may open a
+  management session (see `## Terms` in the instructions) — one standing director, a
+  rota, a scheduled unattended run, whatever suits them — and record it in the index's
+  `schedule` line, and make sure the task store and log will show who is working on what.
 - Constraints: ask what resources are limited — money, time, compute, attention, anything
   spendable — and what the limits and periods are. Write them into the charter's
   Constraints section. If nothing is limited, say so there rather than leaving it blank.
@@ -84,6 +93,9 @@ Do, with a director, through negotiation:
   whatever its risks demand) and how often each runs. Where a strand genuinely cannot be made
   checkable, name it as a known blind spot rather than inventing a number. A director reviews
   this; weak or gameable measures here cap everything later.
+- Ask what triggers an assessment, and what triggers a redesign — they need not be the same,
+  since assess is cheap and read-only while redesign changes skills. Record both answers in the
+  index's `schedule` line.
 - Your index: fill in what is known now and you may write — the enterprise name, the
   schedule, the kernel version and upstream, and the director channel: the full route for
   approval, feedback, and direction, with the approval route explicit within it (you can

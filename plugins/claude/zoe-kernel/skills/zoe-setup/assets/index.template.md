@@ -14,6 +14,8 @@ and write "not yet created".
 
 - enterprise name: {a name for this enterprise, used in your log and when you send feedback}
 - where the charter is: {the file or place holding it}
+- where the enterprise instructions are: {your own standing directions, conventions and facts,
+  read every session beside the kernel's instructions}
 - how to reach a director: {how you contact them for approval, feedback and instructions, and
   how they answer. You cannot run unattended until this is filled in.}
 - directors: {who they are — in general terms, or listed individually. Where there are
@@ -21,8 +23,10 @@ and write "not yet created".
   it, say here what the arrangement is.}
 - where feedback arrives: {where messages from people using your work come in. Write "none"
   if there is nowhere yet.}
-- schedule: {what "due" and "this cycle" mean here, and how often you run feedback and your
-  checks. Checking for a new kernel has its own line below.}
+- schedule: {what "due" and "this cycle" mean here, what triggers an assessment and what
+  triggers a redesign (they need not be the same), who may open a management session (with one
+  director, them), and how often you run feedback and your checks. Checking for a new kernel
+  has its own line below.}
 - date and time: {the timezone to use — normally the director's — and the format. Always
   record the offset, like 2026-06-14T07:38:29+08:00, so times stay in order.}
 - kernel version: {which version of the ZOE kernel you run on}
@@ -37,6 +41,9 @@ and write "not yet created".
   planning". Say which real model each kind means. See `## Models` in the instructions.}
 - agents this enterprise runs: {which ones, and where their definitions live. Every session
   starts by checking they are all there, so this line is what that check reads.}
+- running unattended: {whether this host can run this enterprise on a schedule with nobody
+  present, and how it is started. Write "no" if it cannot.}
+- concurrency limit: {how many workers may run at once}
 - known weaknesses: {anything about this setup that will keep looking like a fault but is
   not — for example a host that cannot run separate agents. Recorded here so it is not
   reported afresh every session.}
