@@ -18,6 +18,17 @@
       },
       "source": "./plugins/claude/zoe-kernel",
       "category": "productivity"
+    },
+    {
+      "name": "zoe-sdlc",
+      "description": "ZOE SDLC — a skill set for running a software project with AI agents, on top of the ZOE kernel.",
+      "version": "0.6.0",
+      "author": {
+        "name": "Sam Stainsby",
+        "email": "sam@stainsby.au"
+      },
+      "source": "./plugins/claude/zoe-sdlc",
+      "category": "productivity"
     }
   ]
 }
