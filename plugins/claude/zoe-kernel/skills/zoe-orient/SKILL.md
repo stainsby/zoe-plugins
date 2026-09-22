@@ -3,49 +3,47 @@ name: zoe-orient
 description: Run first, every session — check the wiring, take bearings from state and log, and hand off.
 ---
 
-> ZOE Core file — read-only. Do not edit. You can add dependent skills if you
-> need to specialise it.
-
-A session should proceed from the current state and log — after checking the
-wiring that carries them.
+> ZOE Core file — read-only.
 
 ## When it runs
 
-Every session starts here, even one opened with a specific director request, and even on
-an enterprise so new there is nothing to read.
+Every session, including one opened for a specific director request and one on an
+enterprise so new there is nothing to read.
 
 ## Steps, in order
 
 1. Check the wiring before trusting it: the index exists and is visible to you as a
    skill; the agents the index says this enterprise
    runs are visible on the host. On a failure here — or no index at all — hand off to
-   `zoe-setup`, which runs with a director, and record what was found. A limitation the
-   index already records as a known weakness (for example, a host that cannot run
-   separate agents) is not a failure — do not re-flag it.
-2. Read the clock — never assume the time.
-   Every timestamp this session comes from it.
-3. Read your index; everything else is located through it.
+   `zoe-setup`, which runs with a director, and record what was found.
+2. Read the clock; every timestamp this session comes from it.
+3. Read your index, and the director-specific index if there is one; everything else is
+   located through them. Where the index says directors keep director-specific records and
+   none are here, enquire: ask who is present. Among the index's directors, they are working
+   in a new copy of the files: create their director-specific index and state and go on. Not
+   among them, they have just joined: add them, create their records, and record in the log
+   that they joined and when, so every other director sees it.
 4. Check the gate states your index's approval route names. An approved decision that
    has not yet been acted on is news to act on; anything still gated is waiting.
-5. Sweep the task store your index points at: for each unfinished item, reconcile its status
-   against its completion criterion and its evidence, not against memory. Record what you
-   change in the store as you act. Flag any contradictions. Correct the record only;
-   advancing the work itself waits for the hand-off.
-6. Read the log tail and identify any interrupted step, to resume it from state and log.
+5. Sweep the task store your index points at: reconcile each unfinished item's status
+   against its completion criterion and evidence, correcting the record only, and flag
+   contradictions.
+6. Read the log tail and identify any interrupted step, to resume it from state and log —
+   and any session still open there (see `## Terms` in the instructions), whose
+   management-grade work you leave alone.
 7. Name the live trigger — a director request, an approved item, inbound feedback, a due
-   check — and from it the kind of session, asking only if you cannot tell.
-   A management session records that it has started in the log
-   before you hand off; a work session that finds management is needed records a planning
+   check — and from it the kind of session. State both to the director if one is present,
+   before you hand off, so they can choose otherwise; ask only if you cannot tell.
+   Record in the log that this session has opened, which director and which kind, before
+   you hand off; a work session that finds management is needed records a planning
    item and carries on. Nothing due means report a short state summary and stop — offering
    a management session in that summary where one is due and this session may open it.
 
 ## Must obey
 
-Charter hard rules are checked at the moment of acting. Anything gated and unapproved does
-not proceed — but that halts the gated item only: finish the sweep, record the request, and
-hand off whatever is not blocked (see `## Stop and ask a director when` in the
-instructions). This skill ends at the hand-off. Do not go on to do the work you just
-handed over — that belongs to the skill you handed it to.
+Anything gated and unapproved halts that item only (`## Stop and ask a director when` in
+the instructions). This skill ends at the hand-off; the work belongs to the skill you
+handed it to.
 
 ## Hand off
 
