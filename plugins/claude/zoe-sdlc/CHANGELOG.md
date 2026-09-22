@@ -1,5 +1,49 @@
 # Changelog
 
+## 0.7.0 — 2026-09-23
+
+### A size limit nobody set is unchecked, not met
+
+A leaf component is sized to fit one sitting: one stretch of work with the whole of it in
+mind. The base used to call this a "session", which since kernel 1.5.0 is also the kernel's
+name for a logged unit of work that can run many tasks, and that reading loosens the limit a
+great deal. The unit is now called a sitting, and said not to be the kernel's session.
+
+Each project still records its limit at adoption. What is new is what happens when it has
+not: the rule is unchecked, not met. The structure pass that opens every audit now picks up a
+leaf past the recorded limit, as it already picked up a file too large to read whole.
+
+**If you adopted an earlier version,** re-read what your project recorded as "one session":
+that is now its size limit, in sittings. If it recorded nothing, record a limit now, or why
+one cannot yet be set.
+
+### Audits are project-wide, and say what they clear
+
+The four checks each sweep the whole project and run once when due, not once per release. An
+audit's record now names the pieces of work it clears and those it does not, with the finding
+that holds each open; a release is complete when all four checks have cleared it. Before, a
+project with several releases open could read the base as owing every check once for each.
+
+The rule to run the checks in order now states its condition: in order where a finding from
+an earlier check can be fixed before the next runs; otherwise they may run together.
+
+### A fact lives in one specification
+
+A specification states what its own component owns and points at its children's
+specifications for the rest, so each fact lives in one document and a reader's attention is
+not spent on it twice. A rule a parent sets over all its children is the parent's own.
+
+### Other hosts
+
+The README says what to add when your AI starts from the kernel's `hosts/any-host/AGENTS.md`,
+which names only the kernel's instructions and your own.
+
+### Shorter
+
+The instructions and every skill were read for rules stated twice, justification standing
+where the rule alone would do, and coaching an engineer does not need, and those were cut. No
+rule was removed. The base is about 10% shorter than 0.6.0 despite the additions above.
+
 ## 0.6.0 — 2026-09-14
 
 ### A way to check the install took

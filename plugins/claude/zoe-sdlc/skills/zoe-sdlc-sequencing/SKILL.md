@@ -2,7 +2,7 @@
 name: zoe-sdlc-sequencing
 kind: understanding
 description: The order every change follows, and what "complete" means. For any task that will change software, and for judging whether one is finished.
-version: 2
+version: 3
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -42,8 +42,7 @@ decision, never just because the work was already moving.
    the structure you intend (module boundaries, which way dependencies point,
    patterns) matches the specification. Any departure from it is written down
    before it is taken. A shortcut is not taken merely because it would work.
-5. **Write the tests** — before the code, against the capability contracts, so
-   they exist independently of whatever ends up being written to satisfy them.
+5. **Write the tests** — before the code, against the capability contracts.
 6. **Write the code** — satisfying the tests and the specification, linked to
    the capabilities it implements and uses, and meeting the project's
    engineering practices (`zoe-sdlc-adopt`).
@@ -57,13 +56,10 @@ does not earn the highest.
 
 - **A task, component or capability** is complete when all its relevant tests
   pass and every document it affected says what was actually built. Never on
-  intention or assertion. Untested code counts as not yet written: it cannot be
-  the basis for calling anything done.
+  intention or assertion. Untested code counts as not yet written.
 - **A specification edition** — one numbered revision of a specification
-  (`zoe-sdlc-specify`) — is complete when it has also passed a compliance audit
+  (`zoe-sdlc-specify`) — is complete when a compliance audit has also cleared it
   (`zoe-sdlc-audits`).
 - **A release, or the project itself,** is complete only when all four checks
-  have passed for the work in question (`zoe-sdlc-audits`). Tests passing says
-  the code does what the specification asked. It says nothing about whether the
-  specification was what anybody wanted, and that is what the four checks are
-  for.
+  have cleared it (`zoe-sdlc-audits`). Passing tests do not show that the
+  specification was what anybody wanted; the four checks do.

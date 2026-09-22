@@ -19,15 +19,13 @@ By default, human approval is needed at these points in this process:
   when an audit finds one.
 
 An adopter can give the AI more autonomy than this, or less. The points a
-project keeps go into its charter's hard rules, which every agent doing the work
-is given (`zoe-sdlc-adopt`). Where a skill asks for one of these approvals, it
-asks only while the project keeps that point.
+project keeps go into its charter's hard rules (`zoe-sdlc-adopt`), and a skill
+asks for one of these approvals only while the project keeps that point.
 
 ## Style
 
 - Everything a project produces under this process is written plainly, at the
   level a business analyst would be comfortable reading and writing. Use a
-  technical term only where the subject genuinely needs one.
-  This holds just as much for files only an AI will ever
-  read: the words in them shape the words it writes back to people.
+  technical term only where the subject genuinely needs one. This holds for
+  files only an AI will read too: their words shape the words it writes back.
 - Professional tone; no emojis in project documents.
