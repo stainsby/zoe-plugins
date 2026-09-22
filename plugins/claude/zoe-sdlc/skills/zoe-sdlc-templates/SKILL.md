@@ -2,7 +2,7 @@
 name: zoe-sdlc-templates
 kind: understanding
 description: What a template is. For making a document from a template, and for creating, changing or deleting a template.
-version: 3
+version: 4
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -22,8 +22,7 @@ guidance travels with the shape, in one piece.
 ## Using one
 
 - **Copy the template exactly** to start a new document. Never rewrite its
-  structure from memory: memory drops sections, and a dropped section is a step
-  quietly skipped.
+  structure from memory.
 - **Read the whole thing before filling any of it in**, then fill it in one
   section at a time, following each section's own instructions.
 - **Delete the guidance that was only there to tell you how to fill a section
