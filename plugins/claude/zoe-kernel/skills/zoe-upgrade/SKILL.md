@@ -27,16 +27,15 @@ Do:
 - Show a director what changed between the two kernels, from upstream's changelog (shipped
   alongside the kernel; your index records where it is). Read the entries spanning your
   current version up to upstream's — a long-lagging adopter catches up across several
-  versions at once. Adopting a new kernel is always gated: it replaces the rules you run on.
+  versions at once. If you keep a copy of the kernel, also diff your copy against the new
+  tree; if you symlink it, the changelog span is the authoritative account of what moved
+  under you. Adopting a new kernel is always gated: it replaces the rules you run on.
 - On approval: replace your kernel files whole with the new ones — never
   merge or hand-edit them — and update `kernel version` in your index.
 - After swapping kernel files, call `zoe-reconcile` to bring the enterprise's structure up
-  to the new kernel's shape; it follows the changelog span's migration steps and touches
-  only structure, never the charter content.
+  to the new kernel's shape.
 - Reset `last upgrade check` in state to now, whether the check ran or was declined.
 - Tell the enterprises below you (see your index) an upgrade is available. Each
   gates its own adoption; do not push it on them.
-
-Never: adopt a kernel without approval.
 
 Hand off: findings go to redesign (`zoe-redesign`).
