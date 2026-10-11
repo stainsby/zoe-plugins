@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.1 — 2026-10-11
+
+### A component's capabilities are all of what it does
+
+`zoe-sdlc-components` now says it outright: behaviour that none of a component's capabilities, or
+its children's, covers is either a capability missing from its specification or code that should
+not be there. The dependency graph and the dangling-code check already implied it.
+
+### Checked against kernel 1.5.4
+
+The note in `hosts/claude-code/README.md` on the kernel's manual install check now says that
+from kernel 1.5.1 it counts only the kernel's own skill links, so linking this base's skills
+beside them no longer raises the number. Nothing else in the base relied on what kernels 1.5.1 to
+1.5.4 changed.
+
 ## 0.7.0 — 2026-09-23
 
 ### A size limit nobody set is unchecked, not met
