@@ -2,7 +2,7 @@
 name: zoe-sdlc-components
 kind: understanding
 description: How a software project is broken into components, what a capability is, and how both are named — so that parts can be worked on separately, and every document can refer to the same units. For specifying, breaking up or restructuring a system, and for any task that implements part of one.
-version: 6
+version: 7
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -64,6 +64,9 @@ system connect: a component provides capabilities, and works by using the
 capabilities of other components. Each capability is owned by exactly one
 component and scoped by it; a component with sub-components documents only the
 capabilities it directly owns — a child's capabilities live with the child.
+Together, a component's capabilities and its children's are everything it does:
+behaviour that none of them covers is either a capability missing from its specification or code
+that should not be there.
 
 Every capability states a contract: what it takes in, what it gives back, what
 must be true before it is used and after it has run, and how it fails. The
