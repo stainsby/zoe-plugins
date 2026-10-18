@@ -2,7 +2,7 @@
 name: zoe-sdlc-tasks
 kind: understanding
 description: What this process asks of every task. For planning, starting or finishing any piece of software work.
-version: 3
+version: 4
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -27,8 +27,8 @@ life:
 - **What it is for, written before the work starts** — its context and scope,
   its goal, the documents it answers to, what it is assuming, and how anyone
   will know it went well.
-- **What was actually done**, with the evidence: test output, differences in
-  the code, measurements.
+- **What was actually done**, with the evidence: test output, diffs,
+  measurements.
 - **What the results mean** against that goal and those assumptions: what held
   up, what was a surprise, what is now better understood.
 - **What follows** — decisions taken, further tasks worth doing, and anything

@@ -2,7 +2,7 @@
 name: zoe-sdlc-stories
 kind: action
 description: Write and maintain user stories. For capturing behaviour from the point of view of whoever wants or uses it.
-version: 3
+version: 4
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -36,9 +36,8 @@ Every story obeys:
   wanted.
 - **Describe the interaction before writing criteria.** First how the person
   starts it and what they see back; then criteria in those same terms, never in
-  terms of what happens inside. Each criterion takes the form: the starting
-  situation, the action taken, the expected result. At least two per story, and
-  at least one covering a case that fails or sits at a limit.
+  terms of what happens inside. Each criterion is Given / When / Then. At least
+  two per story, and at least one covering a failure or edge case.
 - **A story is not a work item.** No implementation notes, no test results, no
   audit findings. The only thing that changes on it is its status; the work
   happens in tasks that point at the story.

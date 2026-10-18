@@ -24,7 +24,7 @@ what lands in the workspace is a copy of the released text rather than anything 
 ## What it writes
 
 - `.zoe-sdlc/instructions/zoe-sdlc.instructions.md` — a pinned copy of the base's
-  instructions: the points where a person approves before work goes on, and how everything
+  instructions: the points where a director approves before work goes on, and how everything
   the project produces is written.
 - `.zoe-sdlc/VERSION` — the release of the base that file and this plugin's skills came
   from.

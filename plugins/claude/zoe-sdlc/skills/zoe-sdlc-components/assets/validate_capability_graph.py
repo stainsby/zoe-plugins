@@ -4,7 +4,7 @@
 An example, not a rule. Copy it into your own project and change it there; do
 not edit it in place, and do not read it as the way this has to be done.
 `zoe-sdlc-components` says what must hold — how the system connects together is
-one graph, declared in a form a program can read, and checked by one — and
+one graph, declared in machine-readable form, and checked by a program — and
 deliberately leaves the format and the tooling to you. This file is
 one working answer, written for one particular set of conditions, kept because a
 working answer is easier to adapt than a blank page.
@@ -45,7 +45,7 @@ SDLC base. Where your project differs, change the script or write your own.
 
 What it checks
 --------------
-Loops in the graph; references to capabilities no specification defines; a
+Cycles in the graph; references to capabilities no specification defines; a
 capability depending on another capability of its own component, which the base
 rules out because a component's internal structure is not a dependency between
 components; nodes with nothing pointing at them and nothing they point at; and
@@ -385,7 +385,7 @@ def validate_graph(G: nx.DiGraph, all_capabilities: Set[str], all_warnings: Opti
         'internal_capabilities': len(internal_capabilities),
         'external_capabilities': len(external_capabilities),
     }
-    # Check the graph has no loops
+    # Check the graph is acyclic
     try:
         results['is_dag'] = nx.is_directed_acyclic_graph(G)
         if not results['is_dag']:
@@ -397,7 +397,7 @@ def validate_graph(G: nx.DiGraph, all_capabilities: Set[str], all_warnings: Opti
                 results['cycles'] = [f"Error finding cycles: {e}"]
     except Exception as e:
         results['is_dag'] = False
-        results['cycles'] = [f"Error checking for loops: {e}"]
+        results['cycles'] = [f"Error checking for cycles: {e}"]
     # Find disconnected nodes (no connections at all)
     for node in G.nodes():
         in_degree = G.in_degree(node)
@@ -452,11 +452,11 @@ def generate_report(results: dict, output_file: Optional[Path] = None) -> str:
     lines.append(f"External Capabilities: {results['external_capabilities']}")
     lines.append(f"Total Capabilities: {results['total_capabilities']}")
     lines.append(f"Total Dependencies: {results['total_edges']}")
-    lines.append(f"Free of loops: {'YES' if results['is_dag'] else 'NO'}")
+    lines.append(f"Acyclic: {'YES' if results['is_dag'] else 'NO'}")
     lines.append("")
     # Cycles
     if results['cycles']:
-        lines.append("LOOPS DETECTED:")
+        lines.append("CYCLES DETECTED:")
         lines.append("-" * 80)
         for i, cycle in enumerate(results['cycles'], 1):
             if isinstance(cycle, str):
@@ -466,7 +466,7 @@ def generate_report(results: dict, output_file: Optional[Path] = None) -> str:
                 lines.append(f"  {i}. {cycle_str}")
         lines.append("")
     else:
-        lines.append("OK: no loops detected")
+        lines.append("OK: no cycles detected")
         lines.append("")
     # Disconnected nodes
     if results['disconnected']:

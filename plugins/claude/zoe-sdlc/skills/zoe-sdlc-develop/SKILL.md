@@ -2,7 +2,7 @@
 name: zoe-sdlc-develop
 kind: action
 description: Run an implementation task, on its own or as a batch of related tasks delivered and checked together. For building specified behaviour — one component, or work spanning several.
-version: 2
+version: 3
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -31,16 +31,16 @@ An implementation task covers either one component or several.
 ## Delivering several tasks together
 
 Sometimes related tasks — fixes, features, specification changes — only make
-sense delivered as one piece. Group them into a batch: a fixed list of tasks,
-ordered so that nothing starts before what it depends on, with a stated
-condition for starting and a check of the whole thing at the end.
+sense delivered as one piece. Group them into a batch: a fixed list of tasks
+in dependency order, with an entry condition and a check of the whole at the
+end.
 
 - **A batch lists its tasks, and a task never names its batch**, so moving a
   task from one batch to another stays cheap.
-- **Test every point where one piece of software talks to another** — calls
-  over a network, messages between running programs, calls across a language
-  boundary. Find them while planning, and before the batch closes make sure at
-  least one automated test makes the real call across each of them.
+- **Test every integration point** — network calls, inter-process messages,
+  foreign-function calls. Find them while planning, and before the batch closes
+  cover each with at least one automated test that makes the real call,
+  unmocked.
 - Anything found along the way: if it is small and directly related, do it in
   the task you are already in. Anything more becomes a new task. The batch
-  only grows with human approval.
+  only grows with a director's approval.

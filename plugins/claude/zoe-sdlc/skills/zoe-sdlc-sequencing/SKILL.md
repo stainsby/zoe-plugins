@@ -2,7 +2,7 @@
 name: zoe-sdlc-sequencing
 kind: understanding
 description: The order every change follows, and what "complete" means. For any task that will change software, and for judging whether one is finished.
-version: 3
+version: 4
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -27,8 +27,8 @@ allowed is letting them quietly drift apart.
 
 ## The sequence
 
-Every change follows this order. A step is skipped only by explicit human
-decision, never just because the work was already moving.
+Every change follows this order. A step is skipped only by a director's
+explicit decision, never just because the work was already moving.
 
 1. **Write or update the story** — where the change is something a person or
    another system outside will notice. The story says what is wanted and in
@@ -39,7 +39,7 @@ decision, never just because the work was already moving.
 3. **Plan the tests** — decide what will show the change is correct: which
    kinds of test apply, and what they have to cover.
 4. **Check it fits the architecture** — before writing tests or code, confirm
-   the structure you intend (module boundaries, which way dependencies point,
+   the structure you intend (module boundaries, dependency direction,
    patterns) matches the specification. Any departure from it is written down
    before it is taken. A shortcut is not taken merely because it would work.
 5. **Write the tests** — before the code, against the capability contracts.

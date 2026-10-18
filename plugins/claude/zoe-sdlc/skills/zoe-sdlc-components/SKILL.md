@@ -2,7 +2,7 @@
 name: zoe-sdlc-components
 kind: understanding
 description: How a software project is broken into components, what a capability is, and how both are named — so that parts can be worked on separately, and every document can refer to the same units. For specifying, breaking up or restructuring a system, and for any task that implements part of one.
-version: 7
+version: 8
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -33,8 +33,8 @@ top-level component that binds all others together. Three classes matter:
 
 A **leaf component** (one with no sub-components) is sized so the human or agent
 doing the work can fully specify, implement and test it in one sitting — one
-stretch of work with the whole of it in mind, within what an AI assistant can
-hold in its context and a human's attention span. A sitting is not the
+stretch of work with the whole of it in mind, within an agent's context window
+and a person's attention span. A sitting is not the
 kernel's session, which can run many tasks. A component too large for one
 sitting is broken into sub-components; an oversized leaf is a defect.
 
@@ -68,8 +68,12 @@ Together, a component's capabilities and its children's are everything it does:
 behaviour that none of them covers is either a capability missing from its specification or code
 that should not be there.
 
-Every capability states a contract: what it takes in, what it gives back, what
-must be true before it is used and after it has run, and how it fails. The
+**Don't Repeat Yourself (DRY).** Do not duplicate code or logic, within a component or across
+components. Implement each piece of logic once, in the capability that owns it, and call it from
+everywhere else.
+
+Every capability states a contract: inputs, outputs, preconditions,
+postconditions and failure modes. The
 contract is what tests are written against, so it has to be complete before the
 code exists. A capability nobody can state a contract for is not yet understood
 well enough to build.
@@ -89,15 +93,15 @@ How the whole system connects together is held as a single **dependency
 graph**. It has two kinds of entry: components point to the capabilities they
 provide, and capabilities point to the capabilities they consume from other
 components. Each specification declares what its component points at — for each
-capability it owns, which other components' capabilities it depends on — in a
-form **a program can read**, so the whole graph can be assembled and checked
+capability it owns, which other components' capabilities it depends on — in
+**machine-readable** form, so the whole graph can be assembled and checked
 automatically. The concrete format (a data block in each
 specification, a tracker's link fields, a manifest) is the project's choice;
-that a program can read it is not.
+that it is machine-readable is not.
 
 The graph is valid only when:
 
-- it has **no loops** — no capability depends, however indirectly, on itself;
+- it is **acyclic**;
 - every consumed capability is **provided by some component** — no dangling
   references;
 - no component is **disconnected** — left with nothing pointing at it and
@@ -121,7 +125,7 @@ capabilities it **uses** to function. The declaration mechanism is whatever
 the language and toolchain make durable and searchable — doc comments,
 annotations, metadata files — decided at adoption. Either way, the link is
 written where the code lives, uses the capability identifiers from the
-specifications, and is readable by a program.
+specifications, and is machine-readable.
 
 Code with no capability link is **dangling**: nothing in the specifications
 explains why it exists. Dangling code is a compliance finding — it gets
