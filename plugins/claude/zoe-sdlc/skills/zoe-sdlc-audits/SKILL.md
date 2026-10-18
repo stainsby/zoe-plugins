@@ -2,7 +2,7 @@
 name: zoe-sdlc-audits
 kind: understanding
 description: Perform charter, fulfilment and compliance audits, and acceptance testing. For planning, running or judging any of them, and for working out which one you need.
-version: 5
+version: 6
 ---
 
 > SDLC Base file — read-only to adopters. Do not edit. Specialise by adding
@@ -41,7 +41,7 @@ checking what may change as a result; where it cannot, they may run together.
   change the lower one, or accept the difference and record why. The exception
   is an **orphan** — work that serves nothing anyone asked for. Whether that is
   scope creep, or something someone wanted and never wrote down, is the
-  human's call, never the auditor's.
+  director's call, never the auditor's.
 - **Neither side is assumed correct.** An audit can find that the charter or a
   specification, not the work, is what drifted.
 - **Structure before content.** Start with a quick pass comparing each
@@ -79,7 +79,8 @@ checking what may change as a result; where it cannot, they may run together.
   implementation honouring its contract, linked back to its identifier.
   Bottom-up: enumerate **everything** under version control in scope —
   source, tests, configuration, pipelines, infrastructure, assets, docs —
-  and find each one's covering capability. Includes a check of the capability
+  and find each one's covering capability. Includes a DRY check: duplicated code
+  or logic is a finding. Includes a check of the capability
   dependency graph; an invalid graph fails the audit. The evidence it reads:
   capability links, mapping tables, code excerpts, and records the project's
   automated build-and-test system has already produced.
@@ -89,9 +90,9 @@ checking what may change as a result; where it cannot, they may run together.
 The acceptance test exercises each user story in the story's named role,
 through the interface as it stands in the environment chosen for this at
 adoption — the one judged close enough to production for a pass to mean
-something (`zoe-sdlc-adopt`) — using only the access and knowledge that role would
-really have. Reading the specifications, using a developer tool, or going in by
-a back way that role has no access to makes the result worthless. Every attempt
+something (`zoe-sdlc-adopt`). It is black-box: only the access and knowledge that
+role really has. Reading the specifications, using developer tools, or any back
+door the role lacks makes the result worthless. Every attempt
 produces evidence an independent reader could judge — recordings, transcripts,
 captures, or witnessed sign-off — and is recorded as pass, partial, fail, or
 blocked.

@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.8.0 — 2026-10-18
+
+### DRY
+
+`zoe-sdlc-components` now requires Don't Repeat Yourself (DRY) within and across components: each
+piece of logic is implemented once, in the capability that owns it, and called from everywhere else.
+The compliance audit checks it, and duplicated code or logic is a finding.
+
+### Written for the actual reader
+
+The instructions' style rule no longer asks for business-analyst-level English. A project writes
+plainly for its actual reader, using the field's established terms rather than paraphrases. The
+base follows its own rule: a contract's inputs, outputs, preconditions, postconditions and failure
+modes; a machine-readable, acyclic dependency graph; Given / When / Then acceptance criteria;
+unmocked tests of each integration point; black-box acceptance testing.
+
+### Approvals are a director's
+
+Kernel 1.6.0 lets several directors and other people share a director channel, and treats anyone
+not identified as a director as data. The base's approval points said "a human", which would let a
+teammate on that channel approve. They now say "a director": the instructions' approval points,
+skipping a step, growing a batch, settling an orphan, and a design decision in a graph fix. A
+specification edition's review stage no longer says "human"; whether a director must approve it is
+the first approval point, kept or dropped like the rest.
+
+### Checked against kernel 1.6.0
+
+The plugin's kernel dependency, any 1.x from 1.4.1, already admits 1.6.0.
+
 ## 0.7.1 — 2026-10-11
 
 ### A component's capabilities are all of what it does
