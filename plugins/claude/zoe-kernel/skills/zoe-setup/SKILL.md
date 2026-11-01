@@ -18,19 +18,17 @@ below, guiding it to a vision level.
 Do, with a director, through negotiation:
 
 - Use the charter template to create the charter.
-  - Ask where the charter should live. The top level of the enterprise's own
-    storage is the usual choice.
+  - Ask where the charter should live.
 - If the enterprise already has assets or running processes — documents, code, accounts,
   habits — record them in the index and treat them as inherited state to bring under
   management, not to ignore.
 - Task tracking: adopt any tracker already in use, else decide the store now; record it
   under `where tasks are kept` (see `zoe-tasks`).
 - Storage: for each kind of record the enterprise will produce — state, log, audit
-  findings, tasks, anything else — ask where it is kept and who needs to read it; different
-  kinds may belong in different places. Record each answer in the index; one place for
+  findings, tasks, anything else — ask where it is kept, who needs to read it, and whether
+  several sessions will write it at once. Record each answer in the index; one place for
   everything is allowed as a recorded decision, never a silent default.
 - Decide where new skills should be created.
-  - The user may need help configuring their host to find these skills.
 - **Set up the agents.** A ZOE runs as three: a **manager** that runs the cycle, a
   **redesigner** that decides what to change in its own skills, and an **assessor** that
   judges the results; the last two are read-only to the work and run as separate agents
@@ -51,29 +49,25 @@ Do, with a director, through negotiation:
 - Ask whether records should quote a director's words exactly, or only say what they
   decided or asked. A quote lets a later reader check that what was said was recorded
   faithfully, but where there are several directors, each one's words are read by the rest.
-  Not quoting is the default. Record the answer in the index.
-- Charter: ask for their vision, scope (in and out), what success looks like, and the hard
-  rules — what the agent must never do, and what must get director approval first. Ask
-  separately whether each of these needs approval: an agent checking its own work because
-  nothing independent can; a change to the enterprise's own skills. Write the
-  charter from their answers. They own and approve it; you do not invent the goal, and the
-  hard rules are theirs to set, not yours. Where more than one director will direct the
+  Record the answer in the index.
+- Charter: ask for their vision, scope (in and out), what success looks like, constraints,
+  and the hard rules — what the agent must never do, and what must get director approval
+  first. Ask separately whether each of these needs approval: an agent checking its own
+  work because nothing independent can; a change to the enterprise's own skills. Write the
+  charter from their answers. They own and approve it; you invent neither
+  the goal nor the hard rules. Where more than one director will direct the
   enterprise, ask how someone becomes one, if it is OK if any one of them can approve
-  anything, and if their actions need to be audited. If not, then discuss the
-  alternatives. With more than one, agree
+  anything, and if their actions need to be audited. With more than one, agree
   too where the director-specific index and state of each are kept, record it in the
-  index, and encourage each to keep a single copy of the enterprise's files. Ask as well who may open a
-  management session (see `## Terms` in the instructions) — one standing director, a
+  index, and encourage each to keep a single copy of the enterprise's files.
+  Ask as well who may open a management session — one standing director, a
   rota, a scheduled unattended run, whatever suits them — and record it in the index's
   `schedule` line, and make sure the task store and log will show who is working on what.
-- Constraints: ask what resources are limited — money, time, compute, attention, anything
-  spendable — and what the limits and periods are. Write them into the charter's
-  Constraints section. If nothing is limited, say so there rather than leaving it blank.
+  Settle the index's `sessions` line with them too.
 - Verification & checks plan, as important as the goal: for each strand of success agree
   the most checkable measure (`## Verification` in the instructions) and how often it is
   taken, and the independent audits the enterprise needs and their schedules; a blind spot
-  is named, not given a number. A director reviews this — weak or gameable measures here
-  cap everything later.
+  is named, not given a number. A director reviews this.
 - Ask what triggers an assessment, and what triggers a redesign.
   Record both answers in the index's `schedule` line.
 - Your index: fill in what is known now — the enterprise name, the schedule, upstream, the

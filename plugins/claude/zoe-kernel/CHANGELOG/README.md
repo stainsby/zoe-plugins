@@ -44,6 +44,7 @@ with bytes beside them as the cross-check, tokens authoritative.
 
 ## Releases, newest first
 
+- [1.7.0](1.7.0.md) — 1.6.0 → 1.7.0 (what a session is; keeping the index's record of where things are current is not a skill change; the kernel loses about 6% of its tokens)
 - [1.6.0](1.6.0.md) — 1.5.4 → 1.6.0 (several directors in one session; orient reads the index before the clock)
 - [1.5.4](1.5.4.md) — 1.5.3 → 1.5.4 (setup asks whether to quote directors; the default is not to)
 - [1.5.3](1.5.3.md) — 1.5.2 → 1.5.3 (what counts as a check; what counts as an instruction; setup asks two approval questions)

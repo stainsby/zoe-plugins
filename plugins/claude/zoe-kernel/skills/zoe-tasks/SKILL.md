@@ -5,8 +5,7 @@ description: Understanding — what a task is, what any task store must provide,
 
 > ZOE Core file — read-only.
 
-This is an understanding skill: it is read for orientation, not run. Skills
-are your capabilities — the "how". Tasks are the work in flight — the "what".
+Skills are your capabilities — the "how". Tasks are the work in flight — the "what".
 
 ## What a task is
 
@@ -28,8 +27,8 @@ anything — recorded in the index under `where tasks are kept`. Whatever it is,
 - **Decomposition**: a task too large or complex for one session is broken into sub-tasks
   until each is sized for the work.
 - **Long or many-item work**: keep the item list in the store, record one item at a time and
-  checkpoint after each, so the work survives a dropped session; independent items may run
-  together. Newly discovered items join the list.
+  checkpoint after each; independent items may run together. Newly discovered items join
+  the list.
 - **Creation**: tasks are created by whatever identifies work — the plan, the director via
   the director channel, discoveries during run, inbound feedback.
 

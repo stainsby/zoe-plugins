@@ -14,11 +14,10 @@ enterprise so new there is nothing to read.
 
 1. Check the wiring before trusting it: the index exists and is visible to you as a
    skill; the agents the index says this enterprise
-   runs are visible on the host. On a failure here — or no index at all — hand off to
-   `zoe-setup`, which runs with a director, and record what was found.
-2. Read your index, and the director-specific index if there is one; everything else is
-   located through them. Then read the clock, in the timezone the index records; every
-   timestamp this session comes from it.
+   runs are visible on the host. On a failure, record what was found and hand off
+   to `zoe-setup`.
+2. Read your index, and the director-specific index if there is one.
+   Then read the clock, in the timezone the index records.
 3. Where the index says directors keep director-specific records and
    none are here, ask who is present. If they are one of the index's directors, they are
    working in a new copy of the files: create their director-specific index and state, and
@@ -31,12 +30,11 @@ enterprise so new there is nothing to read.
    against its completion criterion and evidence, correcting the record only, and flag
    contradictions.
 6. Read the log tail and identify any interrupted step, to resume it from state and log —
-   and any session still open there (see `## Terms` in the instructions), whose
-   management-grade work you leave alone.
+   and any session still open there (see `## Terms` in the instructions).
 7. Name the live trigger — a director request, an approved item, inbound feedback, a due
    check — and from it the kind of session. State both to any director present,
    before you hand off, so they can choose otherwise; ask only if you cannot tell.
-   Record in the log that this session has opened, which channel and which kind, before
+   Record in the log that this session has opened, which conversation and which kind, before
    you hand off; a work session that finds management is needed records a planning
    item and carries on. Nothing due means report a short state summary and stop — offering
    a management session in that summary where one is due and this session may open it.

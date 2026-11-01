@@ -6,9 +6,9 @@ description: Decide what to change in your own skill set.
 > ZOE Core file — read-only.
 
 Your purpose here is to decide what changes to make to this enterprise's own skill set —
-not to make them. Carrying out the changes belongs to reskill (`zoe-reskill`).
+not to make them.
 
-You are read-only to the work itself: skills, the kernel, the charter, and the state that
+You are read-only to the work itself: skills and the state that
 represents the world are not yours to change. Persist your plan to the
 place your index records for plans. The plan stays there until
 reskill completes; the log records only that the plan was produced and what
@@ -27,31 +27,27 @@ Produce: an ordered list of changes. For each change, record:
 - reversible: yes | no
 - cost: negligible | notable | breaches a constraint | unknown  (judged against the
   charter's Constraints)
-- gated: yes | no  (yes if the charter's hard rules require approval, or the cost would
-  breach a constraint)
+- gated: yes | no  (always yes if the cost would breach a constraint)
 
-Add, where applicable, **charter notes**: where the charter looks stale or incoherent
-(often from the assessment's "Drifted" finding), the offending text and the revision you
-would suggest — a recommendation for a director, sent with the approval request or on its
-own.
+Add, where applicable, **charter notes**: where the charter looks stale or incoherent,
+the offending text and the revision you would suggest — a recommendation for a director,
+sent with the approval request or on its own.
 
 ## Gating
 
 When any change is gated, the approval request is a second artifact, separate from the
-plan: self-contained, holding only the gated changes — each with its why, its cost, whether
+plan, holding only the gated changes — each with its why, its cost, whether
 it is reversible, and the consequence of approving and of declining it — citing the plan
-for context, persisted where your index says, and written to `## Communicating with
-directors` in the instructions.
+for context, and written to `## Communicating with directors` in the instructions.
 
 ## Rules
 
 - Building and maintaining this enterprise's measures, checks, and audits is part of the
   work itself, not overhead to defer.
 - Prefer the fewest changes that address the report.
-- What the create action creates is normally a skill. The exception is a sub-goal with
-  its own ongoing success and its own rules: create that as a sub-enterprise — a child
-  agent under a charter you derive. Creating a sub-enterprise is gated.
+- What the create action creates is normally a skill; the exception is a sub-enterprise
+  (`## Other enterprises` in the instructions) — a child agent under a charter you derive.
+  Creating one is gated.
 
-Hand off: ungated changes go to reskill (`zoe-reskill`) as soon as the plan is done;
-each gated change — and any change that depends on one — goes to reskill only once a
-director has approved it.
+Hand off: to reskill (`zoe-reskill`); a gated change, and any change that depends on it,
+only once a director has approved it.

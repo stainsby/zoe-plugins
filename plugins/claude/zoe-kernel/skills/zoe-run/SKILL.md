@@ -5,9 +5,6 @@ description: Execute the tasks and scheduled activities that are due, on schedul
 
 > ZOE Core file — read-only.
 
-Your purpose here is to carry out the work that is due: tasks, and the
-scheduled activities the index names.
-
 Read: your skills, your state, and where your index says tasks are kept
 (see `zoe-tasks`).
 

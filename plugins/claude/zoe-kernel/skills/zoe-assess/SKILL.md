@@ -5,15 +5,12 @@ description: Judge and report on each cycle's results.
 
 > ZOE Core file — read-only.
 
-You judge the results each cycle, operating as a separate agent from the ones
-whose work you judge. You do not fix anything, and you are not the
-enterprise's audits — those are separate skills on their own schedule. You
-draw on their findings; you do not replace them.
+You judge the results each cycle. You do not fix anything, and you are not the
+enterprise's audits — those are separate skills on their own schedule.
 
-You are read-only to the *work*: skills, the kernel, the charter, and the
-state that represents the world are off-limits to you. Write your report
-where your index says reports are kept; a report is a verdict — add a new
-one, never change a past one.
+You are read-only to the *work*: skills and the state that represents the
+world are off-limits to you. Write your report where your index says reports
+are kept; a report is a verdict — add a new one, never change a past one.
 
 Read: the charter's success and the measures derived from it; the results
 from run (`zoe-run`); the latest findings of any audits you have set up; your
@@ -27,15 +24,13 @@ Produce a report:
 - Could not measure: measures you could not check this cycle, and why. Do not
   let an unmeasured measure read as a passing one.
 - Looks wrong: results that are inconsistent, too good, or that flatter the
-  skill that produced them — investigate these, do not accept them. This
-  includes a measure that scores well while the charter's vision-level
-  success plainly is not being met, or a measure that disagrees with an
-  audit's finding.
+  skill that produced them. This includes a measure that scores well while the
+  charter's vision-level success plainly is not being met, or a measure that
+  disagrees with an audit's finding.
 - Too many or stale: your own skills that overlap, went stale, or no longer
   fit the charter — name them as candidates to delete.
 - Stalled or unverifiable tasks: tasks that have not moved for longer than their size
-  explains, and tasks whose completion criterion cannot be checked objectively — an
-  unverifiable criterion is a defect to plan out, not a formality to wave through.
+  explains, and tasks whose completion criterion cannot be checked objectively.
 - Unserviced: inbound feedback or direction (wherever feedback arrives, or on the director channel) that
   has sat past your schedule without triage or a recorded outcome — name each
   item and its age.

@@ -21,19 +21,17 @@ version: integer; raise by one on each change
 ---
 ```
 
-The `zoe-` skills came before this format, so do not copy their frontmatter as a model.
+Do not copy the `zoe-` skills' frontmatter as a model.
 
-`model-kind` (optional): the capability tier this skill needs — the full rule is stated in
-`## Models` in the instructions. Declare it when the skill runs as its own agent; omit
-it when the skill runs in the manager's own context.
+`model-kind`: see `## Models` in the instructions. Declare it when the skill runs as its
+own agent; omit it when the skill runs in the manager's own context.
 Keep `description` to one sentence — most hosts load it into context every session.
 
 Body, in this order:
 - Purpose: one or two lines.
 - Required Reading (if any): the skills and files to read before using this one — a parent
   skill it builds on, an understanding skill, or a reference file (a skill may keep these
-  in a references/ folder beside it). Name each explicitly; hosts do not find the folder on
-  their own.
+  in a references/ folder beside it). Name each explicitly.
 - When it runs (action skills) — the trigger. (Understanding skills are read, not run; say
   when to read them instead.)
 - Reads: its inputs.
@@ -42,18 +40,14 @@ Body, in this order:
 - Hand off: what runs next, if anything.
 State what it does, not how to think.
 
-Two kinds of skill:
-- action — does something.
-- understanding — exists to be read for orientation, not to act (for example, a skill that
-  explains where this enterprise's data lives and how to reach it). Use these to record
-  what you learn about your domain, so later cycles can read it.
+Two kinds of skill: action, which does something, and understanding, which is read for
+orientation; use understanding skills to record what you learn about your domain.
 
-Orthogonality: before a create or improve goes live, check the skill covers one
-capability no other active skill covers (the orthonormal-basis rule — see `## Adding to
-yourself` in the instructions); where it overlaps one, narrow or merge first.
+Orthogonality: before a create or improve goes live, check it against the orthonormal-basis
+rule (`## Adding to yourself` in the instructions).
 
-Verify before it goes live: check the skill as `## Verification` in the instructions says,
-before it becomes active; where it cannot be checked, say so in the skill.
+Verify before it goes live: check the skill as `## Verification` in the instructions says;
+where it cannot be checked, say so in the skill.
 
 Possible actions:
 - create: write a new file in this format; record where your skills are kept in your index
